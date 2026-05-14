@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brawl Stars — Ban Rehberi</title>
+<link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bs-yellow: #FFD700;
+    --bs-orange: #FF8C00;
+    --bs-blue: #1E5FA8;
+    --bs-dark-blue: #0D2E5C;
+    --bs-light-blue: #3A9BD5;
+    --bs-purple: #6B2FA0;
+    --bs-red: #C0392B;
+    --bs-green: #27AE60;
+    --bs-bg: #0A1628;
+    --bs-card: #112240;
+    --bs-card2: #162b50;
+    --bs-border: #1E3A6A;
+    --bs-text: #E8F4FD;
+    --bs-muted: #8BB5D8;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Nunito', sans-serif;
+    background-color: var(--bs-bg);
+    color: var(--bs-text);
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+  }
+
+  /* === BACKGROUND === */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 10% 20%, rgba(30, 95, 168, 0.18) 0%, transparent 50%),
+      radial-gradient(ellipse at 90% 80%, rgba(107, 47, 160, 0.15) 0%, transparent 50%),
+      radial-gradient(ellipse at 50% 50%, rgba(13, 46, 92, 0.3) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* Stars pattern */
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      radial-gradient(1px 1px at 10% 15%, rgba(255,255,255,0.4) 0%, transparent 100%),
+      radial-gradient(1px 1px at 25% 40%, rgba(255,255,255,0.3) 0%, transparent 100%),
+      radial-gradient(1px 1px at 40% 8%, rgba(255,255,255,0.4) 0%, transparent 100%),
+      radial-gradient(1px 1px at 60% 30%, rgba(255,255,255,0.3) 0%, transparent 100%),
+      radial-gradient(1px 1px at 75% 55%, rgba(255,255,255,0.4) 0%, transparent 100%),
+      radial-gradient(1px 1px at 88% 18%, rgba(255,255,255,0.3) 0%, transparent 100%),
+      radial-gradient(1px 1px at 15% 70%, rgba(255,255,255,0.3) 0%, transparent 100%),
+      radial-gradient(1px 1px at 50% 85%, rgba(255,255,255,0.4) 0%, transparent 100%),
+      radial-gradient(1px 1px at 92% 65%, rgba(255,255,255,0.3) 0%, transparent 100%),
+      radial-gradient(1.5px 1.5px at 35% 60%, rgba(255,215,0,0.5) 0%, transparent 100%),
+      radial-gradient(1.5px 1.5px at 70% 90%, rgba(255,215,0,0.4) 0%, transparent 100%),
+      radial-gradient(1.5px 1.5px at 5% 45%, rgba(255,215,0,0.5) 0%, transparent 100%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* === HEADER === */
+  header {
+    position: relative;
+    z-index: 10;
+    background: linear-gradient(180deg, #0D2E5C 0%, rgba(13,46,92,0.95) 100%);
+    border-bottom: 3px solid var(--bs-yellow);
+    box-shadow: 0 4px 30px rgba(255,215,0,0.15), 0 2px 10px rgba(0,0,0,0.5);
+    padding: 0;
+  }
+
+  .header-top {
+    background: linear-gradient(90deg, #FF8C00, #FFD700, #FF8C00);
+    height: 4px;
+  }
+
+  .header-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 22px 24px 18px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .header-logo {
+    width: 54px;
+    height: 54px;
+    background: linear-gradient(135deg, var(--bs-yellow), var(--bs-orange));
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    box-shadow: 0 4px 16px rgba(255,140,0,0.5), inset 0 1px 0 rgba(255,255,255,0.3);
+    flex-shrink: 0;
+    border: 2px solid rgba(255,255,255,0.2);
+  }
+
+  .header-text h1 {
+    font-family: 'Lilita One', cursive;
+    font-size: 1.7rem;
+    color: var(--bs-yellow);
+    text-shadow: 0 2px 8px rgba(255,140,0,0.5), 2px 2px 0 rgba(0,0,0,0.4);
+    letter-spacing: 0.5px;
+    line-height: 1.1;
+  }
+
+  .header-text p {
+    font-size: 0.82rem;
+    color: var(--bs-muted);
+    margin-top: 4px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+  }
+
+  .header-badge {
+    margin-left: auto;
+    background: rgba(192,57,43,0.2);
+    border: 1.5px solid var(--bs-red);
+    border-radius: 20px;
+    padding: 6px 14px;
+    font-size: 0.72rem;
+    color: #FF6B6B;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  /* === SEARCH === */
+  .search-area {
+    position: relative;
+    z-index: 10;
+    max-width: 900px;
+    margin: 28px auto 0;
+    padding: 0 24px;
+  }
+
+  .search-wrap {
+    position: relative;
+  }
+
+  .search-icon {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    pointer-events: none;
+  }
+
+  .search-input {
+    width: 100%;
+    background: var(--bs-card);
+    border: 2px solid var(--bs-border);
+    border-radius: 14px;
+    padding: 14px 18px 14px 48px;
+    color: var(--bs-text);
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+
+  .search-input::placeholder { color: var(--bs-muted); font-weight: 600; }
+  .search-input:focus {
+    border-color: var(--bs-yellow);
+    box-shadow: 0 0 0 3px rgba(255,215,0,0.12);
+  }
+
+  /* === STATS BAR === */
+  .stats-bar {
+    position: relative;
+    z-index: 10;
+    max-width: 900px;
+    margin: 18px auto 0;
+    padding: 0 24px;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .stat-pill {
+    background: var(--bs-card);
+    border: 1.5px solid var(--bs-border);
+    border-radius: 20px;
+    padding: 6px 14px;
+    font-size: 0.78rem;
+    font-weight: 800;
+    color: var(--bs-muted);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .stat-pill span { color: var(--bs-yellow); font-size: 0.9rem; }
+
+  /* === CONTENT === */
+  .content {
+    position: relative;
+    z-index: 10;
+    max-width: 900px;
+    margin: 24px auto 40px;
+    padding: 0 24px;
+  }
+
+  /* === CATEGORY FILTER === */
+  .filter-bar {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+
+  .filter-btn {
+    background: var(--bs-card);
+    border: 1.5px solid var(--bs-border);
+    border-radius: 20px;
+    padding: 6px 14px;
+    color: var(--bs-muted);
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 800;
+    cursor: pointer;
+    transition: all 0.18s;
+    letter-spacing: 0.2px;
+  }
+
+  .filter-btn:hover, .filter-btn.active {
+    background: var(--bs-yellow);
+    border-color: var(--bs-yellow);
+    color: var(--bs-bg);
+  }
+
+  /* === CARDS === */
+  .cards-list { display: flex; flex-direction: column; gap: 14px; }
+
+  .card {
+    background: var(--bs-card);
+    border: 1.5px solid var(--bs-border);
+    border-radius: 18px;
+    overflow: hidden;
+    transition: transform 0.18s, box-shadow 0.18s, border-color 0.18s;
+    animation: fadeUp 0.4s ease both;
+  }
+
+  .card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+    border-color: rgba(255,215,0,0.3);
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .card-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 20px;
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+  }
+
+  .card-icon {
+    width: 46px;
+    height: 46px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    flex-shrink: 0;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+  }
+
+  .card-meta { flex: 1; min-width: 0; }
+
+  .card-num {
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    opacity: 0.6;
+    margin-bottom: 2px;
+  }
+
+  .card-title {
+    font-family: 'Lilita One', cursive;
+    font-size: 1.05rem;
+    line-height: 1.2;
+    color: var(--bs-text);
+  }
+
+  .card-severity {
+    font-size: 0.68rem;
+    font-weight: 800;
+    padding: 3px 10px;
+    border-radius: 10px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    margin-right: 6px;
+  }
+
+  .sev-perm { background: rgba(192,57,43,0.2); color: #FF6B6B; border: 1px solid rgba(192,57,43,0.5); }
+  .sev-temp { background: rgba(255,140,0,0.15); color: #FFA94D; border: 1px solid rgba(255,140,0,0.4); }
+  .sev-warn { background: rgba(255,215,0,0.12); color: #FFD700; border: 1px solid rgba(255,215,0,0.35); }
+
+  .card-arrow {
+    font-size: 12px;
+    color: var(--bs-muted);
+    transition: transform 0.25s;
+  }
+
+  .card.open .card-arrow { transform: rotate(180deg); }
+
+  .card-body {
+    display: none;
+    padding: 0 20px 20px;
+    border-top: 1px solid var(--bs-border);
+  }
+
+  .card.open .card-body { display: block; }
+
+  .card-body p {
+    font-size: 0.88rem;
+    line-height: 1.7;
+    color: #B8D4EE;
+    margin-top: 14px;
+    font-weight: 600;
+  }
+
+  .detail-list {
+    margin-top: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .detail-item {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--bs-border);
+    border-radius: 10px;
+    padding: 10px 14px;
+    font-size: 0.83rem;
+    color: #A8C8E8;
+    line-height: 1.55;
+    font-weight: 600;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  .detail-item::before {
+    content: '•';
+    color: var(--bs-yellow);
+    font-size: 1.1rem;
+    line-height: 1.2;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  /* Color themes */
+  .theme-red .card-icon { background: linear-gradient(135deg, #C0392B, #E74C3C); }
+  .theme-red .card-num, .theme-red .card-title { color: #FF6B6B; }
+  .theme-red { border-left: 3px solid #C0392B; }
+
+  .theme-orange .card-icon { background: linear-gradient(135deg, #E67E22, #F39C12); }
+  .theme-orange .card-num, .theme-orange .card-title { color: #FFA94D; }
+  .theme-orange { border-left: 3px solid #E67E22; }
+
+  .theme-yellow .card-icon { background: linear-gradient(135deg, #F39C12, #FFD700); }
+  .theme-yellow .card-num { color: var(--bs-muted); }
+  .theme-yellow .card-title { color: #FFD700; }
+  .theme-yellow { border-left: 3px solid #F39C12; }
+
+  .theme-blue .card-icon { background: linear-gradient(135deg, #1E5FA8, #3A9BD5); }
+  .theme-blue .card-num, .theme-blue .card-title { color: #74B9FF; }
+  .theme-blue { border-left: 3px solid #1E5FA8; }
+
+  .theme-purple .card-icon { background: linear-gradient(135deg, #6B2FA0, #9B59B6); }
+  .theme-purple .card-num, .theme-purple .card-title { color: #C39BD3; }
+  .theme-purple { border-left: 3px solid #6B2FA0; }
+
+  .theme-green .card-icon { background: linear-gradient(135deg, #1E8449, #27AE60); }
+  .theme-green .card-num, .theme-green .card-title { color: #A9DFBF; }
+  .theme-green { border-left: 3px solid #1E8449; }
+
+  .theme-teal .card-icon { background: linear-gradient(135deg, #148F77, #1ABC9C); }
+  .theme-teal .card-num, .theme-teal .card-title { color: #A3E4D7; }
+  .theme-teal { border-left: 3px solid #148F77; }
+
+  .theme-pink .card-icon { background: linear-gradient(135deg, #A93226, #E91E63); }
+  .theme-pink .card-num, .theme-pink .card-title { color: #F48FB1; }
+  .theme-pink { border-left: 3px solid #E91E63; }
+
+  /* === NO RESULTS === */
+  .no-results {
+    display: none;
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--bs-muted);
+    font-size: 0.95rem;
+    font-weight: 700;
+  }
+
+  .no-results span { display: block; font-size: 3rem; margin-bottom: 12px; }
+
+  /* === FOOTER === */
+  footer {
+    position: relative;
+    z-index: 10;
+    background: linear-gradient(180deg, rgba(13,46,92,0.6) 0%, var(--bs-bg) 100%);
+    border-top: 2px solid var(--bs-border);
+    padding: 22px 24px;
+    text-align: center;
+  }
+
+  .footer-inner { max-width: 900px; margin: 0 auto; }
+
+  footer p {
+    font-size: 0.75rem;
+    color: var(--bs-muted);
+    font-weight: 700;
+    line-height: 1.6;
+  }
+
+  footer p strong { color: var(--bs-yellow); }
+
+  /* === SCROLL BAR === */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--bs-bg); }
+  ::-webkit-scrollbar-thumb { background: var(--bs-border); border-radius: 6px; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--bs-light-blue); }
+
+  /* === RESPONSIVE === */
+  @media (max-width: 600px) {
+    .header-text h1 { font-size: 1.3rem; }
+    .header-badge { display: none; }
+    .card-title { font-size: 0.95rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-top"></div>
+  <div class="header-inner">
+    <div class="header-logo">⚡</div>
+    <div class="header-text">
+      <h1>Brawl Stars Ban Rehberi</h1>
+      <p>Tüm ban sebepleri — tam ve ayrıntılı açıklamalar</p>
+    </div>
+    <div class="header-badge">🚫 15 Kategori</div>
+  </div>
+</header>
+
+<!-- SEARCH -->
+<div class="search-area">
+  <div class="search-wrap">
+    <span class="search-icon">🔍</span>
+    <input class="search-input" type="text" id="searchInput" placeholder="Ban sebebi ara... (örn: bot, hesap, hile)">
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stat-pill">📋 Toplam Kural <span>15</span></div>
+  <div class="stat-pill">🔴 Kalıcı Ban <span>10</span></div>
+  <div class="stat-pill">🟠 Geçici Ban <span>3</span></div>
+  <div class="stat-pill">⚠️ Uyarı <span>2</span></div>
+</div>
+
+<!-- FILTER -->
+<div class="content">
+  <div class="filter-bar">
+    <button class="filter-btn active" onclick="filterCards('all', this)">Tümü</button>
+    <button class="filter-btn" onclick="filterCards('perm', this)">🔴 Kalıcı Ban</button>
+    <button class="filter-btn" onclick="filterCards('temp', this)">🟠 Geçici Ban</button>
+    <button class="filter-btn" onclick="filterCards('warn', this)">⚠️ Uyarı</button>
+  </div>
+
+  <div class="cards-list" id="cardsList">
+
+    <!-- 1 -->
+    <div class="card theme-red" data-sev="perm" data-keywords="hile bot yazılım mod apk aim hack speed makro cheat">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div class="card-icon">🤖</div>
+        <div class="card-meta">
+          <div class="card-num">01 — Yazılım</div>
+          <div class="card-title">Üçüncü Taraf Yazılım Kullanımı</div>
+        </div>
+        <div class="card-severity sev-perm">Kalıcı Ban</div>
+        <div class="card-arrow">▼</div>
+      </div>
+      <div class="card-body">
+        <p>Supercell'in en sert yaptırım uyguladığı alandır. Neredeyse her zaman kalıcı ban ile sonuçlanır. Sunucu tarafı izleme sistemi, insan davranışından sapan kalıpları otomatik algılar.</p>
+        <div class="detail-list">
+          <div class="detail-item"><b>Bot Kullanımı:</b> Oyunu otomatik oynayan, brawler'ı kendiliğinden hareket ettiren, düşmanlara otomatik nişan alıp ateş eden yazılımlar. Kupa farmlamak, event ilerlemek veya ödül toplamak amacıyla kullanılır.</div>
+          <div class="detail-item"><b>Mod APK / Modifiye İstemci:</b> Duvar haxı, süper hız, sonsuz mermi, menzil artırıcı gibi özelliklerin eklendiği değiştirilmiş APK dosyaları. İmza doğrulama sistemleri atlattıkları an tespit edilir.</div>
+          <div class="detail-item"><b>Aim Assist Programları:</b> Nişan almayı otomatize eden, ekranda hedef kilitleme sağlayan araçlar. Özellikle Amber, Piper, Belle gibi brawler'larda isabet istatistikleri anomali tespit eder.</div>
+          <div class="detail-item"><b>Speed Hack / Lag Switch:</b> Oyun hızını manipüle eden ya da kasıtlı ağ kesintisi oluşturan araçlar. Lag switch ile diğer oyuncuların donmasını sağlamak da bu kapsamdadır.</div>
+          <div class="detail-item"><b>Memory Injector / Cheat Engine:</b> Can, mermi, süper doluluk gibi hafıza değerlerini anlık değiştirmeye çalışan araçlar. Sunucu taraflı doğrulama değişiklikleri kabul etmez ama tespit kaydı tutulur.</div>
+          <div class="detail-item"><b>Makro Yazılımları:</b> Belirli hareketleri otomatik tekrarlayan, Showdown'da hareket + saldırı döngüsü kuran araçlar. İnsan dışı hassasiyet ve zamanlama ile tespit edilir.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2 -->
+    <div class="card theme-orange" data-sev="perm" data-keywords="küfür hakaret tehdit taciz zorbalık toksik chat sohbet nefret">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div class="card-icon">💬</div>
+        <div class="card-meta">
+          <div class="card-num">02 — Davranış</div>
+          <div class="card-title">Rahatsız Edici Davranış ve Toksik Chat</div>
+        </div>
+        <div class="card-severity sev-perm">Kalıcı Ban</div>
+        <div class="card-arrow">▼</div>
+      </div>
+      <div class="card-body">
+        <p>Supercell oyun içi sohbet ortamını aktif moderasyon altında tutar. Bildirilen oyuncular incelemeye alınır. Otomatik filtre ve manuel inceleme birlikte çalışır.</p>
+        <div class="detail-list">
+          <div class="detail-item"><b>Nefret Söylemi ve Ayrımcılık:</b> Irk, etnik köken, din, cinsiyet, cinsel yönelim veya engellilik durumuna dayalı aşağılayıcı ifadeler. Otomatik filtre ve moderatör incelemesiyle tespit edilir.</div>
+          <div class="detail-item"><b>Küfür ve Hakaret:</b> Ağır küfürler içeren mesajlar. Filtreden kaçmak için bilinçli yapılan yazım değişiklikleri (harf yerine sembol) de manuel incelemeyle tespit edilir.</div>
+          <div class="detail-item"><b>Tehdit ve Taciz:</b> "Hesabını sileceğim", "IP'ni alacağım" gibi tehdit içeren mesajlar. Aynı oyuncuya defalarca rahatsız edici mesaj göndermek de taciz kapsamındadır.</div>
+          <div class="detail-item"><b>Cinsel İçerikli Konuşmalar:</b> Oyun içi sohbette cinsel içerik veya müstehcen ifadeler paylaşmak. Özellikle küçük yaştaki oyunculara yönelikse çok ağır yaptırım uygulanır.</div>
+          <div class="detail-item"><b>Zorbalık (Bullying):</b> Belirli bir oyuncuyu defalarca hedef almak, performansı için aşağılamak. Supercell, The Royal Foundation'ın Siber Zorbalığı Önleme Komitesi'ne üyedir.</div>
+          <div class="detail-item"><b>Kulüp Adı/Açıklama İhlalleri:</b> Kulüp adında uygunsuz, hakaret içeren veya nefret söylemi barındıran ifadeler. Hem kulübün kapatılmasına hem de hesabın cezalandırılmasına yol açabilir.</div>
+          <div class="detail-item"><b>Asılsız Bildirim:</b> Başka bir oyuncuyu cezalandırmak için gerçeğe aykırı şikâyet etmek. Şikâyet eden hesap da yaptırıma tabi tutulabilir.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3 -->
+    <div class="card theme-yellow" data-sev="perm" data-keywords="hesap satın alma satma paylaşma transfer">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div class="card-icon">🔄</div>
+        <div class="card-meta">
+          <div class="card-num">03 — Hesap</div>
+          <div class="card-title">Hesap Satın Alma, Satma ve Paylaşma</div>
+        </div>
+        <div class="card-severity sev-perm">Kalıcı Ban</div>
+        <div class="card-arrow">▼</div>
+      </div>
+      <div class="card-body">
+        <p>Supercell gözetiminde yapılmayan hiçbir hesap transferi meşru değildir. Hem satıcı hem alıcı hesap kalıcı olarak engellenir.</p>
+        <div class="detail-list">
+          <div class="detail-item"><b>Hesap Satışı:</b> Geliştirilmiş hesabı para veya başka bir değer karşılığında devretmek. Discord, sosyal medya veya web siteler üzerinden yapılsa da Hizmet Koşulları ihlalidir.</div>
+          <div class="detail-item"><b>Hesap Satın Alma:</b> Satın alınan hesap zaten engellenmiş, birden fazla kişiye satılmış ya da orijinal sahibi tarafından geri talep edilmiş olabilir.</div>
+          <div class="detail-item"><b>Hesap Paylaşımı:</b> Rekabetçi avantaj için bir hesabı birden fazla kişinin oynaması. Farklı coğrafi konumlardan veya cihazlardan sık giriş Supercell'in güvenlik sistemlerini tetikler.</div>
+          <div class="detail-item"><b>Hesap Devretme / Hediye Etme:</b> Hesabı ücretsiz bile olsa başkasına vermek Hizmet Koşulları'na aykırıdır. Hesap yalnızca onu oluşturan kişiye aittir.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4 -->
+    <div class="card theme-red" data-sev="perm" data-keywords="elmas gem taş satın alma sahte site ucuz ücretsiz jailbreak root">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div class="card-icon">💎</div>
+        <div class="card-meta">
+          <div class="card-num">04 — Elmas</div>
+          <div class="card-title">Yetkisiz Taş / Elmas Alımı</div>
+        </div>
+        <div class="card-severity sev-perm">Kalıcı Ban</div>
+        <div class="card-arrow">▼</div>
+      </div>
+      <div class="card-body">
+        <p>3. taraf elmas satıcıları neredeyse her zaman dolandırıcıdır. Supercell, bu yolla elde edildiğini tespit ettiği elmasları siler ve hesabı kalıcı olarak engeller.</p>
+        <div class="detail-list">
+          <div class="detail-item"><b>Sahte Elmas Siteleri:</b> "Ucuz elmas", "ücretsiz gem" vaat eden siteler. Genellikle hesap bilgilerini istedikten sonra hesabı çalarak başka kişilere satarlar.</div>
+          <div class="detail-item"><b>Jailbreak / Root Cihaz Üzerinden Alım:</b> Uygulama içi satın alma adımlarını atlatmaya çalışmak. Google Play, App Store güvenlik sistemleri ve Supercell sunucu doğrulaması tarafından tespit edilir.</div>
+          <div class="detail-item"><b>Sahte Ödeme / Sahte Makbuz:</b> Gerçek ödeme yapmadan, sahte ekran görüntüsü veya manipüle edilmiş ödeme belgesiyle elmas veya içerik almaya çalışmak.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5 -->
+    <div class="card theme-red" data-sev="perm" data-keywords="iade chargeback para iade banka">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div class="card-icon">💳</div>
+        <div class="card-meta">
+          <div class="card-num">05 — Ödeme</div>
+          <div class="card-title">Para İadesi (Chargeback) İstismarı</div>
+        </div>
+        <div class="card-severity sev-perm">Kalıcı Ban</div>
+        <div class="card-arrow">▼</div>
+      </div>
+      <div class="card-body">
+        <p>Oyun içi satın alım yapıldıktan sonra banka veya App Store/Google Play üzerinden haksız iade talebinde bulunmak, Supercell'in en sert karşılık verdiği davranışlardan biridir.</p>
+        <div class="detail-list">
+          <div class="detail-item">Gem paketi satın alıp oyunda kullandıktan sonra "yetkisiz işlem" süsü vererek iade istemek en yaygın örnektir.</div>
+          <div class="detail-item">Bu durumda hem satın alınan tüm içerikler silinebilir hem de hesap kalıcı olarak engellenebilir.</div>
+          <div class="detail-item">Birden fazla chargeback girişimi neredeyse her zaman kalıcı bana yol açar.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6 -->
+    <div class="card theme-orange" data-sev="perm" data-keywords="exploit bug açık harita hata istismar">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div class="card-icon">🐛</div>
+        <div class="card-meta">
+          <div class="card-num">06 — Açık</div>
+          <div class="card-title">Oyun Açığını Bilinçli İstismar Etmek</div>
+        </div>
+        <div class="card-severity sev-perm">Kalıcı Ban</div>
+        <div class="card-arrow">▼</div>
+      </div>
+      <div class="card-body">
+        <p>Güncellemeler sırasında ortaya çıkan hataları kasıtlı ve tekrarlı biçimde kullanmak, oyun içi ekonomiyi veya rekabeti bozmaya yönelik kabul edilir.</p>
+        <div class="detail-list">
+          <div class="detail-item">Belirli brawler kombinasyonuyla rakibin oyundan atılmasına sebep olan bug'ı kasıtlı tekrarlamak.</div>
+          <div class="detail-item">Map exploit ile haritanın dışına çıkmak ya da duvarların içine girmek.</div>
+          <div class="detail-item">Özel bir hareketi tekrarlayarak ölümsüzlük veya yenilmezlik bug'ı tetiklemek.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 7 -->
+    <div class="card theme-blue" data-sev="perm" data-keywords="kupa düşürme smurf rank boosting eşleştirme matchmaking">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div class="card-icon">🏆</div>
+        <div class="card-meta">
+          <div class="card-num">07 — Rekabet</div>
+          <div class="card-title">Eşleştirme Manipülasyonu</div>
+        </div>
+        <div class="card-severity sev-perm">Kalıcı Ban</div>
+        <div class="card-arrow">▼</div>
+      </div>
+      <div class="card-body">
+        <p>Rekabetçi eşleştirme sistemini kasıtlı olarak bozmak açık bir kural ihlalidir.</p>
+        <div class="detail-list">
+          <div class="detail-item"><b>Kupa Düşürme (Trophy Dropping):</b> Kasıtlı maç kaybederek daha zayıf rakiplerle eşleşmek ve ardından kolay maçlarla hızlıca kupa toplamak.</div>
+          <div class="detail-item"><b>Smurf Hesap:</b> Düşük kupalı sahte hesaplar oluşturarak yeni veya deneyimsiz oyuncularla kasıtlı eşleşip deneyimlerini mahvetmek.</div>
+          <div class="detail-item"><b>Rank Boosting:</b> Başka oyuncunun hesabını onun adına oynayarak kupa veya rank yükseltmek. Hem hesap paylaşımı hem eşleştirme manipülasyonu kapsamında çift ihlal oluşturur.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 8 -->
+    <div class="card theme-purple" data-sev="perm" data-keywords="şike turnuva anlaşma maç fixing">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div class="card-icon">🤝</div>
+        <div class="card-meta">
+          <div class="card-num">08 — Turnuva</div>
+          <div class="card-title">Şike Yapmak (Match Fixing)</div>
+        </div>
+        <div class="card-severity sev-perm">Kalıcı Ban</div>
+        <div class="card-arrow">▼</div>
+      </div>
+      <div class="card-body">
+        <p>Özellikle turnuva ve rekabetçi modlarda önceden anlaşarak maçın sonucunu belirlemek. Supercell liderlik tablolarını ve turnuva maçlarını özel moderatörlerle manuel olarak inceler.</p>
+        <div class="detail-list">
+          <div class="detail-item">İki takımın birbirlerine karşılıklı galip gelmesine izin vermesi.</div>
+          <div class="detail-item">Belirli sıralamayı elde etmek için kaybetmeyi kabul etmek.</div>
+          <div class="detail-item">Ödül için kasıtlı sonuç üretmek.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 9 -->
+    <div class="card theme-teal" data-sev="perm" data-keywords="supercell çalışanı impersonation kimlik taklidi moderatör">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div class="card-icon">🎭</div>
+        <div class="card-meta">
+          <div class="card-num">09 — Kimlik</div>
+          <div class="card-title">Supercell Çalışanı Gibi Davranmak</div>
+        </div>
+        <div class="card-severity sev-perm">Kalıcı Ban</div>
+        <div class="card-arrow">▼</div>
+      </div>
+      <div class="card-body">
+        <p>Supercell veya Brawl Stars ekibinin resmi çalışanı, moderatörü ya da destek personeli gibi davranarak diğer oyuncuları yanıltmak. Hem dolandırıcılık hem kimlik taklidi kapsamındadır.</p>
+        <div class="detail-list">
+          <div class="detail-item">"Ben Supercell yöneticisiyim, hesabına özel elmas verebilirim ama bilgilerini paylaşman gerekiyor" tarzında mesajlar göndermek en yaygın örnektir.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 10 -->
+    <div class="card theme-red" data-sev="perm" data-keywords="hesap ele geçirme phishing çalma hack sosyal mühendislik">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div class="card-icon">🔓</div>
+        <div class="card-meta">
+          <div class="card-num">10 — Güvenlik</div>
+          <div class="card-title">Başkasının Hesabını Ele Geçirmek</div>
+        </div>
+        <div class="card-severity sev-perm">Kalıcı Ban</div>
+        <div class="card-arrow">▼</div>
+      </div>
+      <div class="card-body">
+        <p>Başka bir oyuncunun hesabına izinsiz olarak erişmek veya erişmeye teşebbüs etmek. Ele geçirilen hesabı kullanan, satan veya manipüle eden kişi kalıcı olarak banlanır.</p>
+        <div class="detail-list">
+          <div class="detail-item"><b>Phishing (Oltalama):</b> Sahte giriş sayfaları veya mesajlarla giriş bilgilerini çalmak.</div>
+          <div class="detail-item"><b>Tahmin Yoluyla Erişim:</b> Hesap kurtarma bilgilerine tahmin yoluyla erişmek.</div>
+          <div class="detail-item"><b>Sosyal Mühendislik:</b> Güven kazanarak hesap bilgilerini öğrenmek ve izinsiz erişim sağlamak.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 11 -->
+    <div class="card theme-orange" data-sev="temp" data-keywords="kişisel bilgi adres telefon şifre paylaşmak istemek">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div class="card-icon">👤</div>
+        <div class="card-meta">
+          <div class="card-num">11 — Gizlilik</div>
+          <div class="card-title">Kişisel Bilgi İstemek veya Paylaşmak</div>
+        </div>
+        <div class="card-severity sev-temp">Geçici Ban</div>
+        <div class="card-arrow">▼</div>
+      </div>
+      <div class="card-body">
+        <p>Oyun içi sohbet üzerinden kişisel bilgi istemek ya da paylaşmak. Bu kural özellikle küçük yaştaki oyuncuların korunması amacıyla titizlikle uygulanır.</p>
+        <div class="detail-list">
+          <div class="detail-item">Gerçek ad, adres, telefon numarası, okul, şifre gibi kişisel bilgileri istemek veya paylaşmak.</div>
+          <div class="detail-item">Kişisel veri isteme girişimi, taciz ve güvenlik ihlali kapsamında değerlendirilir.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 12 -->
+    <div class="card theme-yellow" data-sev="temp" data-keywords="reklam spam dolandırıcılık elmas giveaway bot hizmet">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div class="card-icon">📢</div>
+        <div class="card-meta">
+          <div class="card-num">12 — Spam</div>
+          <div class="card-title">Reklam, Spam ve Dolandırıcılık</div>
+        </div>
+        <div class="card-severity sev-temp">Geçici Ban</div>
+        <div class="card-arrow">▼</div>
+      </div>
+      <div class="card-body">
+        <p>Oyun içi sohbeti ticari reklam, spam mesaj veya dolandırıcılık amacıyla kullanmak.</p>
+        <div class="detail-list">
+          <div class="detail-item">Üçüncü taraf elmas sitelerinin bağlantısını sohbette paylaşmak.</div>
+          <div class="detail-item">"Bana X elmas at, sana 2X vereyim" türü dolandırıcılık teklifleri.</div>
+          <div class="detail-item">Bot veya otomasyon hizmetleri reklamı yapmak.</div>
+          <div class="detail-item">Sahte giveaway (çekiliş) organizasyonu yaparak oyuncuları aldatmak.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 13 -->
+    <div class="card theme-blue" data-sev="warn" data-keywords="siyasi politika propaganda parti kulüp açıklama">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div class="card-icon">🏛️</div>
+        <div class="card-meta">
+          <div class="card-num">13 — Siyaset</div>
+          <div class="card-title">Siyasal İçerik ve Propaganda</div>
+        </div>
+        <div class="card-severity sev-warn">Uyarı</div>
+        <div class="card-arrow">▼</div>
+      </div>
+      <div class="card-body">
+        <p>Oyun içi iletişim kanallarını siyasi partiye destek, muhalefet veya propaganda amacıyla kullanmak. Supercell oyun platformunun tarafsız ve herkes için erişilebilir kalmasını öngörür.</p>
+        <div class="detail-list">
+          <div class="detail-item">Sohbet, kulüp açıklaması veya oyuncu adında siyasi içerik açık kural ihlali sayılır.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 14 -->
+    <div class="card theme-green" data-sev="warn" data-keywords="teşvik kışkırtma rehber hile öğretmek başkası">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div class="card-icon">📣</div>
+        <div class="card-meta">
+          <div class="card-num">14 — Teşvik</div>
+          <div class="card-title">Başkalarını Kural İhlaline Teşvik Etmek</div>
+        </div>
+        <div class="card-severity sev-warn">Uyarı</div>
+        <div class="card-arrow">▼</div>
+      </div>
+      <div class="card-body">
+        <p>Diğer oyuncuları hile programı kullanmaya, hesap satın almaya veya kural dışı davranışlara yönlendirmek.</p>
+        <div class="detail-list">
+          <div class="detail-item">Rehber, video veya sohbet yoluyla kural ihlalini teşvik etmek bu kapsamdadır.</div>
+          <div class="detail-item">"Ben yapmıyorum ama sana anlatayım" yaklaşımı dahi yaptırıma konu olabilir.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 15 -->
+    <div class="card theme-pink" data-sev="perm" data-keywords="vpn afk griefing feeding isim etiket gayri resmi kural bölge">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div class="card-icon">⚠️</div>
+        <div class="card-meta">
+          <div class="card-num">15 — Gayri Resmi</div>
+          <div class="card-title">Yazılmayan Ama Uygulanan Kurallar</div>
+        </div>
+        <div class="card-severity sev-perm">Kalıcı Ban</div>
+        <div class="card-arrow">▼</div>
+      </div>
+      <div class="card-body">
+        <p>Supercell'in politika sayfasında açıkça belirtilmemekle birlikte pratikte ban sebebi olan davranışlar.</p>
+        <div class="detail-list">
+          <div class="detail-item"><b>VPN Kötüye Kullanımı:</b> VPN ile bölgeye kilitli turnuva veya etkinliklere katılmak. Tespit edildiğinde hesap kısıtlanabilir.</div>
+          <div class="detail-item"><b>Aynı Anda Birden Fazla Cihazdan Giriş:</b> Aynı hesaba farklı IP veya cihazlardan eş zamanlı erişim otomatik güvenlik bayraklaması oluşturur.</div>
+          <div class="detail-item"><b>Sürekli AFK Kalma:</b> Maçlara girip hareketsiz beklemenin tekrarlı tespiti. Özellikle Showdown ve 3v3 modlarında otomatik sistemler izler.</div>
+          <div class="detail-item"><b>Toksik Oyun İçi Davranış (Griefing):</b> Kasıtlı olarak takım arkadaşlarına zarar vermek. Clan wars ve ranked modlarda ciddi ihlal sayılır.</div>
+          <div class="detail-item"><b>İsim / Etiket İhlali:</b> Oyuncu adında uygunsuz, ırkçı veya cinsel ifadeler. Supercell isimleri otomatik filtreden geçirir; tespit edildiğinde isim sıfırlanır.</div>
+          <div class="detail-item"><b>Bölge Yasaları ile Çelişen Davranışlar:</b> Bazı ülkelerde yasak olan içerikleri paylaşmak. Supercell yerel yasal gerekliliklerle uyumlu davranır.</div>
+          <div class="detail-item"><b>Hesap Güvenliği İhmali:</b> Hesabı ele geçiren kişi hile kullandıysa, orijinal sahibi de cezadan etkilenebilir.</div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- end cards-list -->
+
+  <div class="no-results" id="noResults">
+    <span>🔍</span>
+    Aradığın ban sebebi bulunamadı.<br>
+    <small style="font-size:0.8rem; color: var(--bs-muted); margin-top:8px; display:block;">Farklı anahtar kelimeler dene.</small>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <p>Bu rehber <strong>Brawl Stars</strong> oyununa özel hazırlanmıştır. Tüm kurallar ve yaptırımlar <strong>Supercell</strong> tarafından belirlenir ve değiştirilebilir.</p>
+    <p style="margin-top:6px;">Resmi destek için <strong>support.brawlstars.com</strong> adresine başvurun.</p>
+  </div>
+</footer>
+
+<script>
+  // Toggle card open/close
+  function toggleCard(header) {
+    const card = header.parentElement;
+    const wasOpen = card.classList.contains('open');
+    // Close all
+    document.querySelectorAll('.card').forEach(c => c.classList.remove('open'));
+    // Open this one if it was closed
+    if (!wasOpen) card.classList.add('open');
+  }
+
+  // Search
+  const searchInput = document.getElementById('searchInput');
+  searchInput.addEventListener('input', applyFilters);
+
+  // Filter
+  let currentFilter = 'all';
+
+  function filterCards(sev, btn) {
+    currentFilter = sev;
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    applyFilters();
+  }
+
+  function applyFilters() {
+    const query = searchInput.value.toLowerCase().trim();
+    const cards = document.querySelectorAll('.card');
+    let visible = 0;
+
+    cards.forEach(card => {
+      const sev = card.dataset.sev;
+      const keywords = (card.dataset.keywords || '') + ' ' + card.innerText.toLowerCase();
+      const matchesSev = currentFilter === 'all' || sev === currentFilter;
+      const matchesSearch = !query || keywords.includes(query);
+
+      if (matchesSev && matchesSearch) {
+        card.style.display = '';
+        visible++;
+      } else {
+        card.style.display = 'none';
+        card.classList.remove('open');
+      }
+    });
+
+    document.getElementById('noResults').style.display = visible === 0 ? 'block' : 'none';
+  }
+
+  // Open first card by default
+  document.querySelector('.card').classList.add('open');
+</script>
+</body>
+</html>
